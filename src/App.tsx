@@ -18,7 +18,7 @@ function App() {
 
     <div className='flex h-screen bg-gray-100'>
       <nav className='w-64 bg-white shadow-sm'>
-        <div className='p-4'>
+        <div className='p-6'>
           <h1 className='text-xl font-bold'>JobTracker</h1>
         </div>
 

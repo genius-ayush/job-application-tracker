@@ -13,10 +13,10 @@ export const getStoredApplications = (): Application[]=>{
     }
 }
 
-export const savedApplications = (applications: Application[]) : void=>{
+export const saveApplications = (applications: Application[]) : void=>{
 
     try{
-        localStorage.setIem(STORAGE_KEY , JSON.stringify(applications)) ; 
+        localStorage.setItem(STORAGE_KEY , JSON.stringify(applications)) ; 
     }catch(error){
         console.log('Error saving to localstorage:' , error) ; 
     }

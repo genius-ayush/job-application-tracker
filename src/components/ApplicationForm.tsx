@@ -15,7 +15,6 @@ function ApplicationForm({application , onSubmit , onClose} : ApplicationFormPro
   let handleSubmit = (e : React.FormEvent)=>{
     e.preventDefault() ; 
     onSubmit(formData)
-    console.log(formData) ; 
     onClose() ; 
   }
   return (
