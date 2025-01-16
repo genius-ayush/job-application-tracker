@@ -7,11 +7,6 @@ import { Dialog,
   DialogTitle, } from "./ui/dialog";
 import ApplicationForm from "./ApplicationForm";
 
-// interface ApplicationTableProps{
-//   applications : Application[] ;  
-//   onEdit : (application: Application) => void ; 
-//   onDelete : (application : Application) => void ; 
-// }
 
 function ApplicationTable() {
 
@@ -26,7 +21,8 @@ function ApplicationTable() {
   }, [applications]);
 
   const handleSubmit = ()=>{
-
+    
+    
   }
   return (
     <div>
