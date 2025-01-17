@@ -9,6 +9,7 @@ import { Settings } from 'lucide-react';
 import { Bell } from 'lucide-react';
 import ApplicationTable from './components/ApplicationTable';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Analytics from './components/Analytics';
 
 function App() {
 
@@ -55,7 +56,8 @@ function App() {
         <main className='p-6'>
           <Router>
             <Routes>
-              <Route path='/' element={<ApplicationTable />} />
+              <Route path='/applications' element={<ApplicationTable />} />
+              <Route path='/analytics' element={<Analytics />} />
             </Routes>
           </Router>
         </main>
