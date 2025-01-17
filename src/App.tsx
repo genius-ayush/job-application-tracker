@@ -10,7 +10,6 @@ import { Bell } from 'lucide-react';
 import ApplicationTable from './components/ApplicationTable';
 
 import Analytics from './components/Analytics';
-import Landing from './components/Landing';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 function App() {
@@ -76,7 +75,7 @@ function App() {
         <main className='p-6'>
 
           <Routes>
-            <Route path='/' element={<Landing />} />
+            <Route path='/' element={<ApplicationTable />} />
             <Route path='/applications' element={<ApplicationTable />} />
             <Route path='/analytics' element={<Analytics />} />
             
