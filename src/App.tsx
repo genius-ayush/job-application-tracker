@@ -8,13 +8,12 @@ import { Building } from 'lucide-react';
 import { Settings } from 'lucide-react';
 import { Bell } from 'lucide-react';
 import ApplicationTable from './components/ApplicationTable';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Analytics from './components/Analytics';
+import Landing from './components/Landing';
+import { Routes, Route, NavLink } from 'react-router-dom';
 
 function App() {
-
-
-
   return (
 
     <div className='flex h-screen bg-gray-100'>
@@ -24,15 +23,35 @@ function App() {
         </div>
 
         <div className='space-y-2'>
-          <NavItem Icon={NotepadText} label='Applications' isActive={true} />
+          <NavLink to={"/applications"}  className={({ isActive }) => {
+            return isActive ? "bg-blue-50 text-blue-600" : "text-gray-600";
+          }}>
+            <NavItem Icon={NotepadText} label='Applications' />
+          </NavLink>
 
-          <NavItem Icon={ChartNoAxesColumnIncreasing} label='Analytics' isActive={false} />
+          <NavLink to={"/analytics"} className={({ isActive }) => {
+            return isActive ? "text-blue-600 bg-blue-100" : "text-gray-600 bg-white";
+          }}>
+          <NavItem Icon={ChartNoAxesColumnIncreasing} label='Analytics' />
+          </NavLink>
 
-          <NavItem Icon={Calendar} label='Calendar' isActive={false} />
+          <NavLink to={"/calendar"} className={({ isActive }) => {
+            return isActive ? "text-blue-600" : "text-gray-600";
+          }}>
+          <NavItem Icon={Calendar} label='Calendar' />
+          </NavLink>
 
-          <NavItem Icon={Building} label='Companies' isActive={false} />
+          <NavLink to={"/companies"} className={({ isActive }) => {
+            return isActive ? "text-blue-600" : "text-gray-600";
+          }}>
+          <NavItem Icon={Building} label='Companies' />
+          </NavLink>
 
-          <NavItem Icon={Settings} label='Settings' isActive={false} />
+          <NavLink to={"/settings"} className={({ isActive }) => {
+            return isActive ? "text-blue-600" : "text-gray-600";
+          }}>
+          <NavItem Icon={Settings} label='Settings' />
+          </NavLink>
         </div>
       </nav>
 
@@ -54,16 +73,16 @@ function App() {
         </header>
 
         <main className='p-6'>
-          <Router>
-            <Routes>
-              <Route path='/applications' element={<ApplicationTable />} />
-              <Route path='/analytics' element={<Analytics />} />
-            </Routes>
-          </Router>
+
+          <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/applications' element={<ApplicationTable />} />
+            <Route path='/analytics' element={<Analytics />} />
+          </Routes>
+
         </main>
       </div>
     </div>
-
   )
 }
 

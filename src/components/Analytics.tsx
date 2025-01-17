@@ -5,7 +5,6 @@ import { getStoredApplications } from "@/utils/storage";
 
 function Analytics() {
   const applications = useState<Application[]>(() => getStoredApplications());
-  console.log(applications[0]) ; 
   const stats ={
     total : applications[0].length ,
     inProgress : applications[0].filter(app=>app.status === 'In Progress').length  , 
