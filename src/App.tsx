@@ -1,7 +1,7 @@
 
 import './App.css'
 import NavItem from './components/NavItem'
-import { NotepadText, User } from 'lucide-react';
+import { Briefcase, NotepadText, User } from 'lucide-react';
 import { ChartNoAxesColumnIncreasing } from 'lucide-react';
 import { Calendar } from 'lucide-react';
 import { Building } from 'lucide-react';
@@ -15,10 +15,11 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 
 function App() {
   return (
-
+    
     <div className='flex h-screen bg-gray-100'>
-      <nav className='w-64 bg-white shadow-sm'>
-        <div className='p-6'>
+      <nav className='w-64 bg-white shadow-sm '>
+        <div className='p-6 flex items-center gap-1'>
+        <Briefcase className='text-blue-400'/>
           <h1 className='text-xl font-bold'>JobTracker</h1>
         </div>
 
@@ -78,6 +79,7 @@ function App() {
             <Route path='/' element={<Landing />} />
             <Route path='/applications' element={<ApplicationTable />} />
             <Route path='/analytics' element={<Analytics />} />
+            
           </Routes>
 
         </main>
